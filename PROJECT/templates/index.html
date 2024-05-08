@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color:#e7fdf1">
+
+
+    <!-- ############ navigation bar ####################### -->
+
+    <nav style="background-image: linear-gradient(to right, #007535, #09b481);" class="navbar  navbar-light">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="#">
+                <b style="font-size:40px;" class=" fw-bold text-white d-flex">.LOGO</b>
+                <!-- index.html -->
+            </a>
+            <div class="d-flex">
+                
+                <a style="margin-left: 20px; color: rgb(0, 0, 0); border-radius: 10px; background-color: rgb(247, 248, 225);" href="#" class="btn text-grey text-black">Login</a>
+                <a style="margin-left: 20px; color: rgb(0, 0, 0); border-radius: 10px; background-color: rgb(247, 248, 225);" href="#" class="btn text-grey text-black">Register</a>
+           <h6 class="mt-2 text-right text-white " style="margin-left: 10px; padding-left:10px; ">{{user.username}}</h6>
+            </div>
+        </div>
+    </nav>
+    <!-- ############ navigation bar end ####################### -->
+
+
+    <!-- ############ news  ####################### -->
+
+
+    <div class="container mt-5 ">
+      <div class="row">
+        {% for news in all_news %}
+        <div class="col-sm-4">
+            <!-- ######### news card ######## -->
+            <div class="container mt-4">
+                <div class="card"> 
+                    <img src="{{ news.images.url }}" class="card-img-top" alt="News Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ news.heading }}</h5>
+                        <p class="card-text">{{ news.content }}</p>
+                        <a href="#" class="btn btn-success">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+                </div>
+                </div>
+                <!-- ######### news card end ######## -->
+
+
+
+    <!-- ############ end news  ####################### -->
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
